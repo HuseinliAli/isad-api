@@ -1,0 +1,59 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="ServiceUrls.txt" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/ApiGateways/">
+    <Project Path="src/ApiGateways/LMS.WebApiGateway/LMS.WebApiGateway.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/" />
+  <Folder Name="/src/BuildingBlocks/EventBus/">
+    <Project Path="src/BuildingBlocks/EventBus/EventBus.AzureServiceBus/EventBus.AzureServiceBus.csproj" />
+    <Project Path="src/BuildingBlocks/EventBus/EventBus.Base/EventBus.Base.csproj" />
+    <Project Path="src/BuildingBlocks/EventBus/EventBus.Factory/EventBus.Factory.csproj" />
+    <Project Path="src/BuildingBlocks/EventBus/EventBus.RabbitMQ/EventBus.RabbitMQ.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/" />
+  <Folder Name="/src/Services/CertificationService/">
+    <Project Path="src/Services/CertificationService/CertificationService.Api/CertificationService.Api.csproj" />
+    <Project Path="src/Services/CertificationService/CertificationService.Business/CertificationService.Business.csproj" />
+    <Project Path="src/Services/CertificationService/CertificationService.DataAccess/CertificationService.DataAccess.csproj" />
+    <Project Path="src/Services/CertificationService/CertificationService.Entities/CertificationService.Entities.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/CourseService/">
+    <Project Path="src/Services/CourseService/CourseService.Api/CourseService.Api.csproj" />
+    <Project Path="src/Services/CourseService/CourseService.Applcation/CourseService.Applcation.csproj" />
+    <Project Path="src/Services/CourseService/CourseService.Domain/CourseService.Domain.csproj" />
+    <Project Path="src/Services/CourseService/CourseService.Persistence/CourseService.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/EnrollmentService/">
+    <Project Path="src/Services/EnrollmentService/EnrollmentService.Api/EnrollmentService.Api.csproj" />
+    <Project Path="src/Services/EnrollmentService/EnrollmentService.Application/EnrollmentService.Application.csproj" />
+    <Project Path="src/Services/EnrollmentService/EnrollmentService.Domain/EnrollmentService.Domain.csproj" />
+    <Project Path="src/Services/EnrollmentService/EnrollmentService.Persistence/EnrollmentService.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/IdentityService/">
+    <Project Path="src/Services/IdentityService/IdentityService.Api/IdentityService.Api.csproj" />
+    <Project Path="src/Services/IdentityService/IdentityService.Business/IdentityService.Business.csproj" />
+    <Project Path="src/Services/IdentityService/IdentityService.DataAccess/IdentityService.DataAccess.csproj" />
+    <Project Path="src/Services/IdentityService/IdentityService.Entities/IdentityService.Entities.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/InstructorService/">
+    <Project Path="src/Services/InstructorService/InstructorService.Api/InstructorService.Api.csproj" />
+    <Project Path="src/Services/InstructorService/InstructorService.Application/InstructorService.Application.csproj" />
+    <Project Path="src/Services/InstructorService/InstructorService.Domain/InstructorService.Domain.csproj" />
+    <Project Path="src/Services/InstructorService/InstructorService.Persistence/InstructorService.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/PaymentService/">
+    <Project Path="src/Services/PaymentService/PaymentService.Api/PaymentService.Api.csproj" />
+    <Project Path="src/Services/PaymentService/PaymentService.Business/PaymentService.Business.csproj" />
+    <Project Path="src/Services/PaymentService/PaymentService.DataAccess/PaymentService.DataAccess.csproj" />
+    <Project Path="src/Services/PaymentService/PaymentService.Entities/PaymentService.Entities.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/SubmissionService/">
+    <Project Path="src/Services/SubmissionService/SubmissionService.Api/SubmissionService.Api.csproj" />
+    <Project Path="src/Services/SubmissionService/SubmissionService.Application/SubmissionService.Application.csproj" />
+    <Project Path="src/Services/SubmissionService/SubmissionService.Domain/SubmissionService.Domain.csproj" />
+    <Project Path="src/Services/SubmissionService/SubmissionService.Persistence/SubmissionService.Persistence.csproj" />
+  </Folder>
+</Solution>
