@@ -4,13 +4,13 @@ namespace EventBus.Base.Abstractions;
 
 public interface IEventBus
 {
-    void Publish(IntegrationEvent @event);
+    Task Publish(IntegrationEvent @event);
 
-    void Subscribe<T, TH>()
+    Task Subscribe<T, TH>()
         where T: IntegrationEvent
         where TH: IIntegrationEventHandler<T>;
 
-    void Unsubscribe<T, TH>()
+    Task Unsubscribe<T, TH>()
         where T: IntegrationEvent
         where TH: IIntegrationEventHandler<T>;
 }
