@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Solution Items/">
+    <File Path="Nuget.config" />
     <File Path="ServiceUrls.txt" />
   </Folder>
   <Folder Name="/src/" />
