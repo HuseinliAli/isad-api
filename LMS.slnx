@@ -57,4 +57,9 @@
     <Project Path="src/Services/SubmissionService/SubmissionService.Domain/SubmissionService.Domain.csproj" />
     <Project Path="src/Services/SubmissionService/SubmissionService.Persistence/SubmissionService.Persistence.csproj" />
   </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/BuildingBlocks/" />
+  <Folder Name="/tests/BuildingBlocks/EventBus/">
+    <Project Path="tests/BuildingBlocks/EventBus/EventBus.UnitTest/EventBus.UnitTest.csproj" Id="da417ca2-bcf5-4afa-bb5b-d3b8253d5513" />
+  </Folder>
 </Solution>
