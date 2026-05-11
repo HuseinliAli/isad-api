@@ -15,7 +15,7 @@ public abstract class ReadRepository<T> : IReadRepository<T>
         this.dbContext = dbContext;
     }
 
-    public async Task<T?> FindOneAsync(Expression<Func<T, bool>> predicate, bool trackChanges = false)
+    public async Task<T> FindOneAsync(Expression<Func<T, bool>> predicate, bool trackChanges = false)
         => trackChanges ? await dbContext.Set<T>().FirstOrDefaultAsync(predicate) :
                           await dbContext.Set<T>().AsNoTracking().FirstOrDefaultAsync(predicate);
 
@@ -24,7 +24,7 @@ public abstract class ReadRepository<T> : IReadRepository<T>
         => trackChanges ? dbContext.Set<T>().Where(predicate) :
                           dbContext.Set<T>().Where(predicate).AsNoTracking();
 
-    public T? FindOne(Expression<Func<T, bool>> predicate, bool trackChanges = false)
+    public T FindOne(Expression<Func<T, bool>> predicate, bool trackChanges = false)
         => trackChanges ? dbContext.Set<T>().FirstOrDefault(predicate)
         : dbContext.Set<T>().AsNoTracking().FirstOrDefault(predicate);
 

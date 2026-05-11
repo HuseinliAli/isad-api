@@ -1,4 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿using Microsoft.EntityFrameworkCore;
+using Persistence.Base.Models;
+using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
@@ -76,5 +78,21 @@ public static class IQueryableExtensions
         var lambda = Expression.Lambda<Func<T, bool>>(containsExpression, parameter);
 
         return entities.Where(lambda);
+    }
+
+    public static async Task<OffSetPagedList<T>> ToPagedListAsync<T>(
+    this IQueryable<T> source,
+    int pageNumber,
+    int pageSize)
+    where T : class
+    {
+        var count = await source.CountAsync();
+
+        var items = await source
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return new OffSetPagedList<T>(items, count, pageSize, pageNumber);
     }
 }
