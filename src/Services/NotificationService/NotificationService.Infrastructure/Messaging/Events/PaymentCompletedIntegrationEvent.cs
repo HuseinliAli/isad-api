@@ -1,6 +1,6 @@
 ﻿using EventBus.Base.Events;
 
-namespace PaymentService.Entities.Events;
+namespace NotificationService.Infrastructure.Messaging.Events;
 
 public class PaymentCompletedIntegrationEvent : IntegrationEvent
 {
@@ -9,7 +9,7 @@ public class PaymentCompletedIntegrationEvent : IntegrationEvent
     public bool IsSuccess { get; set; }
     public PaymentCompletedIntegrationEvent()
     {
-        
+
     }
     public PaymentCompletedIntegrationEvent(string courseId, string courseName, bool isSuccess)
     {

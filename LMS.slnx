@@ -53,6 +53,11 @@
     <Project Path="src/Services/InstructorService/InstructorService.Domain/InstructorService.Domain.csproj" />
     <Project Path="src/Services/InstructorService/InstructorService.Persistence/InstructorService.Persistence.csproj" />
   </Folder>
+  <Folder Name="/src/Services/NotificationService/">
+    <Project Path="src/Services/NotificationService/NotificationService.Api/NotificationService.Api.csproj" Id="4f3f96d4-9e15-4e72-a75f-d019c463052d" />
+    <Project Path="src/Services/NotificationService/NotificationService.Application/NotificationService.Application.csproj" Id="12b1dc8a-4742-441e-b305-4b4b1e005330" />
+    <Project Path="src/Services/NotificationService/NotificationService.Infrastructure/NotificationService.Infrastructure.csproj" Id="33700ae9-4646-46d1-9a60-553b397add02" />
+  </Folder>
   <Folder Name="/src/Services/PaymentService/">
     <Project Path="src/Services/PaymentService/PaymentService.Api/PaymentService.Api.csproj" />
     <Project Path="src/Services/PaymentService/PaymentService.Business/PaymentService.Business.csproj" />

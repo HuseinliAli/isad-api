@@ -1,16 +1,15 @@
-﻿using Core.Shared.Models;
-using EventBus.Base.Events;
+﻿using EventBus.Base.Events;
 
-namespace PaymentService.Entities.Events;
+namespace NotificationService.Infrastructure.Messaging.Events;
 
 public class PaymentFailedIntegrationEvent : IntegrationEvent
 {
     public string CourseId { get; set; } = default!;
-    public string CourseName { get; set; } = default!;  
+    public string CourseName { get; set; } = default!;
     public string Reason { get; set; } = default!;
     public PaymentFailedIntegrationEvent()
     {
-        
+
     }
     public PaymentFailedIntegrationEvent(string courseId, string courseName, string reason)
     {
