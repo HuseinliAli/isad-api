@@ -8,10 +8,17 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Shared.Options\Core.Shared.Options.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.EntityFramework\Persistence.EntityFramework.csproj" />
+    <ProjectReference Include="..\IdentityService.Business\IdentityService.Business.csproj" />
+    <ProjectReference Include="..\IdentityService.DataAccess\IdentityService.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

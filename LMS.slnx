@@ -11,6 +11,7 @@
   <Folder Name="/src/BuildingBlocks/Core/">
     <Project Path="src/BuildingBlocks/Core/Core.Domain/Core.Domain.csproj" Id="b7167942-12a6-4071-9e69-c2a1a8370b6e" />
     <Project Path="src/BuildingBlocks/Core/Core.Shared.Models/Core.Shared.Models.csproj" Id="b36efae4-d689-47db-86bd-8912f8e1245e" />
+    <Project Path="src/BuildingBlocks/Core/Core.Shared.Options/Core.Shared.Options.csproj" Id="b08fe6a6-d825-4fef-b2ef-61200e8abff3" />
   </Folder>
   <Folder Name="/src/BuildingBlocks/EventBus/">
     <Project Path="src/BuildingBlocks/EventBus/EventBus.AzureServiceBus/EventBus.AzureServiceBus.csproj" />
