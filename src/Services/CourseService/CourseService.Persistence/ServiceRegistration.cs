@@ -18,7 +18,7 @@ public static class ServiceRegistration
         {
             conf.UseSqlServer(configuration.GetConnectionString("sqlConnection"));
         });
-        services.AddUnitOfWorkTransaction();
+        services.AddUnitOfWorkTransaction<CourseServiceDbContext>();
 
         services.AddScoped<ICourseReadRepository, CourseReadRepository>();
         services.AddScoped<IRepositoryManager, RepositoryManager>();

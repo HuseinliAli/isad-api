@@ -1,7 +1,7 @@
 using CourseService.Applcation;
 using CourseService.Persistence;
 using CourseService.Persistence.Context;
-using Microsoft.EntityFrameworkCore;
+using Persistence.EntityFramework.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,12 +35,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("AllowAngular");
-//using (var scope = app.Services.CreateScope())
-//{
-//    var db = scope.ServiceProvider.GetRequiredService<CourseServiceDbContext>();
-//    db.Database.Migrate();
-//    DatabaseSeeder.Seed(db);
-//}
+
+await app.Services.ApplyMigrationsAsync<CourseServiceDbContext>();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

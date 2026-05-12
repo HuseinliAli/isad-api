@@ -6,9 +6,13 @@ namespace Persistence.EntityFramework;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddUnitOfWorkTransaction(this IServiceCollection services)
+    public static IServiceCollection AddUnitOfWorkTransaction<TContext>(
+        this IServiceCollection services)
+        where TContext : CustomDbContext
     {
-        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<CustomDbContext>());
+        services.AddScoped<IUnitOfWork>(
+            sp => sp.GetRequiredService<TContext>());
+
         return services;
     }
 }

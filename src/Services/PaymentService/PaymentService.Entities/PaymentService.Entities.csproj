@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Domain\Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Shared.Models\Core.Shared.Models.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Base\EventBus.Base.csproj" />
+  </ItemGroup>
+
 </Project>

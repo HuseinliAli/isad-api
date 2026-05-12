@@ -59,6 +59,16 @@ public sealed class EventBusRabbitMQ : BaseEventBus
             exchange: EventBusConfig.DefaultTopicName,
             type: "direct",
             durable: true);
+        await consumerChannel.QueueDeclareAsync(
+            queue: GetSubName(eventName),
+            durable: true,
+            exclusive: false,
+            autoDelete: false,
+            arguments: null);
+        await consumerChannel.QueueBindAsync(
+            queue: GetSubName(eventName),
+            exchange: EventBusConfig.DefaultTopicName,
+            routingKey: eventName);
 
         var message = JsonSerializer.Serialize(@event, @event.GetType());
         var body = Encoding.UTF8.GetBytes(message);
