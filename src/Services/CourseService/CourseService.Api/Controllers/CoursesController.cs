@@ -7,7 +7,7 @@ namespace CourseService.Api.Controllers;
 [Route("api/[controller]")]
 public class CoursesController : BaseApiController
 {
-    [Authorize]
+    //[Authorize]
     [HttpGet("size/{size:int:min(1)}/page/{number:int:min(1)}")]
     public async Task<IActionResult> Get([FromRoute] int size, [FromRoute]int number)
     {

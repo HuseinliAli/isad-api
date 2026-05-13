@@ -1,11 +1,20 @@
+using Core.Shared.Options;
+using CourseService.Api.Middlewares;
 using CourseService.Applcation;
 using CourseService.Persistence;
 using CourseService.Persistence.Context;
+using Infrastructure.Interceptors;
 using Persistence.EntityFramework.Extensions;
-using Core.Shared.Options;
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+builder.Services.AddScoped<ValidationFilter>();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ValidationFilter>();
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
@@ -44,5 +53,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseExceptionHandler();
 app.Run();

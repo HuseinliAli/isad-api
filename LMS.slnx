@@ -24,6 +24,7 @@
   </Folder>
   <Folder Name="/src/BuildingBlocks/Infrastructure/">
     <Project Path="src/BuildingBlocks/Infrastrcuture/Infrastructure.Interceptors/Infrastructure.Interceptors.csproj" Id="19a18d08-d35e-44e8-9a14-3c7e7900238c" />
+    <Project Path="src/BuildingBlocks/Infrastrcuture/Infrastructure.Services/Infrastructure.Services.csproj" Id="1dbd05fa-4ffe-4709-b56f-7df3d9f09ad8" />
   </Folder>
   <Folder Name="/src/BuildingBlocks/Persistence/">
     <Project Path="src/BuildingBlocks/Persistence/Persistence.Base/Persistence.Base.csproj" Id="c650601b-6f48-4bca-bef5-1bf4e3c625e4" />

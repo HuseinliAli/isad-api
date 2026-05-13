@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Domain\Core.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Shared.Options\Core.Shared.Options.csproj" />
     <ProjectReference Include="..\IdentityService.Entities\IdentityService.Entities.csproj" />
   </ItemGroup>

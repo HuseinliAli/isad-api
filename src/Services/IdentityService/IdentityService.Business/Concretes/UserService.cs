@@ -1,4 +1,5 @@
-﻿using IdentityService.Business.Abstractions;
+﻿using Core.Domain.Exceptions;
+using IdentityService.Business.Abstractions;
 using IdentityService.Business.Requests;
 using IdentityService.Business.Responses;
 using IdentityService.Entities.Models;
@@ -20,14 +21,11 @@ internal class UserService(UserManager<AppUser> userManager, ITokenService token
     {
         var user = await userManager.FindByEmailAsync(request.Email);    
         if (user == null)
-        {
-            //exception
-        }
+            throw new NotFoundException("Username or Password is wrong");
+        
 
         if (!await userManager.CheckPasswordAsync(user, request.Password))
-        {
-            //exception
-        }
+            throw new NotFoundException("Username or Password is wrong");
 
         return tokenService.CreateAccessToken(user, await userManager.GetRolesAsync(user));
     }
@@ -41,6 +39,11 @@ internal class UserService(UserManager<AppUser> userManager, ITokenService token
             Email = request.Email,
             UserName = request.Email
         };
+
+        if(await userManager.FindByEmailAsync(request.Email) != null)
+        {
+            throw new BadRequestException("This email address is already taken");
+        }
         var result = await userManager.CreateAsync(user, request.Password);
 
         if (result.Succeeded)

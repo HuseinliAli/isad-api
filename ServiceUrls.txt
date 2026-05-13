@@ -3,3 +3,4 @@ IdentityServerUrl http://localhost:8081
 CourseUrl http://localhost:8082
 PaymentUrl http://localhost:8083
 NotificationUrl http://localhost:8084
+EnrollmentUrl http://localhost:8085

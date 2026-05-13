@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Domain\Core.Domain.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.Base\Persistence.Base.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.EntityFramework\Persistence.EntityFramework.csproj" />
     <ProjectReference Include="..\CourseService.Applcation\CourseService.Applcation.csproj" />
     <ProjectReference Include="..\CourseService.Domain\CourseService.Domain.csproj" />
