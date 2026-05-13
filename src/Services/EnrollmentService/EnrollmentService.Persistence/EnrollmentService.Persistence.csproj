@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Factory\EventBus.Factory.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.EntityFramework\Persistence.EntityFramework.csproj" />
     <ProjectReference Include="..\EnrollmentService.Application\EnrollmentService.Application.csproj" />
     <ProjectReference Include="..\EnrollmentService.Domain\EnrollmentService.Domain.csproj" />

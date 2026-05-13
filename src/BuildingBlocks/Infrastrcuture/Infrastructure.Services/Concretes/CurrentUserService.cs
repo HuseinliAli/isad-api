@@ -1,6 +1,5 @@
 ﻿using Infrastructure.Services.Abstractions;
 using Microsoft.AspNetCore.Http;
-using Microsoft.IdentityModel.JsonWebTokens;
 using System.Security.Claims;
 
 namespace Infrastructure.Services.Concretes;

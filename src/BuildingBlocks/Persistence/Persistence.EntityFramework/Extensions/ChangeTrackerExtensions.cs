@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Security.Claims;
 
 namespace Persistence.EntityFramework.Extensions;
 
@@ -19,23 +20,28 @@ public static class ChangeTrackerExtensions
     {
         foreach (var entry in entries)
         {
+
+            var value = httpContextAccessor.HttpContext?
+                .User.FindFirst(ClaimTypes.NameIdentifier);
+
+            int currentUserId = int.TryParse(value?.Value, out var id) ? id : 0;
             if (entry.Entity is not AuditableEntity auditableEntity)
                 continue;
 
-            if (entry.State == EntityState.Added)
-            {
-                ((AuditableEntity)entry.Entity).CreatedAt = DateTime.UtcNow;
-                ((AuditableEntity)entry.Entity).CreatedBy = httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "Unknown";
-            }
-            else if (entry.State == EntityState.Modified)
+            //if (entry.State == EntityState.Added)
+            //{
+            //    ((AuditableEntity)entry.Entity).CreatedAt = DateTime.UtcNow;
+            //    ((AuditableEntity)entry.Entity).CreatedBy = currentUserId.ToString();
+            //}
+            if (entry.State == EntityState.Modified)
             {
                 ((AuditableEntity)entry.Entity).LastModifiedAt = DateTime.UtcNow;
-                ((AuditableEntity)entry.Entity).LastModifiedBy = httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "Unknown";
+                ((AuditableEntity)entry.Entity).LastModifiedBy = currentUserId.ToString();
             }
             else if (entry.State == EntityState.Deleted)
             {
                 ((AuditableEntity)entry.Entity).DeletedAt = DateTime.UtcNow;
-                ((AuditableEntity)entry.Entity).DeletedBy = httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "Unknown";
+                ((AuditableEntity)entry.Entity).DeletedBy = currentUserId.ToString();
                 entry.State = EntityState.Modified;
             }
         }

@@ -11,9 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Base\EventBus.Base.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Infrastrcuture\Infrastructure.Services\Infrastructure.Services.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.Base\Persistence.Base.csproj" />
     <ProjectReference Include="..\EnrollmentService.Domain\EnrollmentService.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Enrollments\Queries\Paged\" />
   </ItemGroup>
 
 </Project>

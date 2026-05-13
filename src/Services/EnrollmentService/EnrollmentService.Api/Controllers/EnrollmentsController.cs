@@ -11,11 +11,9 @@ namespace EnrollmentService.Api.Controllers
     {
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> CreateEnrollment()
+        public async Task<IActionResult> CreateEnrollment([FromBody] EnrollmentCreateCommandRequest request)
         {
-            await mediator.Send(new EnrollmentCreateCommandRequest(Guid.NewGuid()));
-            // Placeholder for creating an enrollment
-            // You would typically receive a DTO as a parameter and send a command to the mediator
+            await mediator.Send(request);
             return Ok();
         }
     }

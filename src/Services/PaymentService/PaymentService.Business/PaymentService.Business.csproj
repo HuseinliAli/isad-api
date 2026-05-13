@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\EventBus\EventBus.Base\EventBus.Base.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastrcuture\Infrastructure.Services\Infrastructure.Services.csproj" />
     <ProjectReference Include="..\PaymentService.DataAccess\PaymentService.DataAccess.csproj" />
   </ItemGroup>
 

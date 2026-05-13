@@ -34,7 +34,8 @@ public class CourseEnrolledIntegrationEventHandler
             CourseName = @event.CourseName,
             Status = isSuccess ? PaymentStatus.Success : PaymentStatus.Failed,
             Amount = @event.Amount,
-            Currency = Currency.EUR
+            Currency = Currency.EUR,
+            CreatedBy = @event.UserId.ToString(),
         });
         await repositoryManager.UnitOfWork.SaveChangesAsync();
         await eventBus.Publish(paymentEvent);
