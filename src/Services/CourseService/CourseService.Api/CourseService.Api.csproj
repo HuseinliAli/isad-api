@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Shared.Options\Core.Shared.Options.csproj" />
     <ProjectReference Include="..\CourseService.Applcation\CourseService.Applcation.csproj" />
     <ProjectReference Include="..\CourseService.Persistence\CourseService.Persistence.csproj" />
   </ItemGroup>

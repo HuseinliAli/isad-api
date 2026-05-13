@@ -8,12 +8,13 @@ namespace IdentityService.Api.Controllers
     [ApiController]
     public class AuthController(IUserService userService) : ControllerBase
     {
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserRegisterRequest request)
         {
             var result = await userService.RegisterAsync(request);
             return Ok(result);
         }
-
+        [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginRequest request)
         {
             var result = await userService.LoginAsync(request);

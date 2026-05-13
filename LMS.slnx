@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/docs/">
+    <File Path="requests.http" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path="Nuget.config" />
     <File Path="ServiceUrls.txt" />

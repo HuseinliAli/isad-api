@@ -1,0 +1,26 @@
+@base = http://localhost:8080/api
+
+### 1. REGISTER
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Ali",
+  "lastName": "Huseynli",
+  "email": "adminpass@gmail.com",
+  "password": "Test123!"
+}
+
+### 2. LOGIN
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "ali@example.com",
+  "password": "Test123!"
+}
+
+
+### 3. GET COURSES
+GET {{base}}/courses/size/10/page/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZW1haWwiOiJhbGlAZXhhbXBsZS5jb20iLCJqdGkiOiI1YjM1ODJkNi0wY2UwLTRjOTgtYTU2Ny03MTBmYWNmNGY1NDMiLCJuYmYiOjE3Nzg2MzExNzUsImV4cCI6MTc3ODYzMjk3NSwiaXNzIjoiaXNhZC1pZGVudGl0eSIsImF1ZCI6ImlzYWQtYXVkaWVuY2UifQ.9T5vby9nTjEVyLpdK3RpTAwwP3EUI_sij6Ks01VfgWM

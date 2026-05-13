@@ -2,6 +2,7 @@ using CourseService.Applcation;
 using CourseService.Persistence;
 using CourseService.Persistence.Context;
 using Persistence.EntityFramework.Extensions;
+using Core.Shared.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,7 +17,7 @@ builder.Services.AddCors(options =>
             .AllowCredentials();
     });
 });
-
+builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddSwaggerGen();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddApplicationServices();
@@ -39,7 +40,7 @@ app.UseCors("AllowAngular");
 await app.Services.ApplyMigrationsAsync<CourseServiceDbContext>();
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
