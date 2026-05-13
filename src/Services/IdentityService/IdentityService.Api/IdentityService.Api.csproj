@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\BuildingBlocks\Core\Core.Shared.Options\Core.Shared.Options.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastrcuture\Infrastructure.Interceptors\Infrastructure.Interceptors.csproj" />
     <ProjectReference Include="..\..\..\BuildingBlocks\Persistence\Persistence.EntityFramework\Persistence.EntityFramework.csproj" />
     <ProjectReference Include="..\IdentityService.Business\IdentityService.Business.csproj" />
     <ProjectReference Include="..\IdentityService.DataAccess\IdentityService.DataAccess.csproj" />

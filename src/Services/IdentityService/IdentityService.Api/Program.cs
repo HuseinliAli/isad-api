@@ -1,13 +1,21 @@
 using Core.Shared.Options;
+using IdentityService.Api.Middlewares;
 using IdentityService.Business;
 using IdentityService.DataAccess;
 using IdentityService.DataAccess.Context;
 using IdentityService.Entities.Models;
+using Infrastructure.Interceptors;
 using Persistence.EntityFramework.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddControllers();
+    builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+    builder.Services.AddProblemDetails();
+    builder.Services.AddScoped<ValidationFilter>();
+    builder.Services.AddControllers(options =>
+    {
+        options.Filters.Add<ValidationFilter>();
+    });
 
     builder.Services.AddOptions<JwtTokenOptions>()
         .BindConfiguration(JwtTokenOptions.SectionName);
@@ -36,6 +44,7 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
 await app.Services.ApplyMigrationsAsync<IdentityServiceDbContext>();
 app.UseHttpsRedirection();
 
@@ -43,5 +52,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseExceptionHandler();
 app.Run();

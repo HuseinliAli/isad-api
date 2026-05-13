@@ -22,6 +22,9 @@
     <Project Path="src/BuildingBlocks/EventBus/EventBus.Factory/EventBus.Factory.csproj" />
     <Project Path="src/BuildingBlocks/EventBus/EventBus.RabbitMQ/EventBus.RabbitMQ.csproj" />
   </Folder>
+  <Folder Name="/src/BuildingBlocks/Infrastructure/">
+    <Project Path="src/BuildingBlocks/Infrastrcuture/Infrastructure.Interceptors/Infrastructure.Interceptors.csproj" Id="19a18d08-d35e-44e8-9a14-3c7e7900238c" />
+  </Folder>
   <Folder Name="/src/BuildingBlocks/Persistence/">
     <Project Path="src/BuildingBlocks/Persistence/Persistence.Base/Persistence.Base.csproj" Id="c650601b-6f48-4bca-bef5-1bf4e3c625e4" />
     <Project Path="src/BuildingBlocks/Persistence/Persistence.EntityFramework/Persistence.EntityFramework.csproj" Id="ec3a531d-3585-4fcd-b5c6-840847ea04b4" />
